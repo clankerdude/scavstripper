@@ -29,6 +29,7 @@ public record ModMetadata : AbstractModMetadata
     public override Dictionary<string, Range>? ModDependencies { get; init; } = null;
     public override string? Url { get; init; } = null;
     public override bool? IsBundleMod { get; init; } = false;
+    public override string License { get; init; } = "MIT";
 }
 
 public sealed class ScavEquipmentConfig
