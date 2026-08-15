@@ -1,0 +1,17 @@
+{
+  "enabled": true,
+  "scavs": {
+    "weapons": true,
+    "armor": false,
+    "helmet": false,
+    "tacticalVest": false,
+    "backpack": false,
+    "headset": false,
+    "eyewear": false,
+    "faceCover": false,
+    "armBand": false,
+    "pockets": true,
+    "holster": true,
+    "scabbard": true
+  }
+}
