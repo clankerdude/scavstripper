@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>ScavEquipmentRemover</AssemblyName>
+    <RootNamespace>ScavEquipmentRemover</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="SPT.Server">
+      <HintPath>lib\SPT.Server.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="SPTarkov.Server.Core">
+      <HintPath>lib\SPTarkov.Server.Core.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="SPTarkov.Common">
+      <HintPath>lib\SPTarkov.Common.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="SPTarkov.Reflection">
+      <HintPath>lib\SPTarkov.Reflection.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SemanticVersioning" Version="3.0.0" />
+    <PackageReference Include="SPTarkov.DI" Version="4.0.13" />
+  </ItemGroup>
+
+  <Target Name="CopyModFiles" AfterTargets="Build">
+    <MakeDir Directories="$(TargetDir)config" />
+    <Copy SourceFiles="config\config.json" DestinationFolder="$(TargetDir)config" />
+  </Target>
+</Project>
